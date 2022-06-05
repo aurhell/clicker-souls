@@ -7,7 +7,8 @@
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center font-medievalSharp">
+    <span class="text-6xl">Welcome to clicker souls</span> <br />
     <div class="text-center">
       <span>Current souls: {{ souls.souls }}</span
       ><br />

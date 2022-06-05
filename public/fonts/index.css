@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Eater';
+  src: url('/fonts/Eater-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LoveLight';
+  src: url('/fonts/LoveLight-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url('/fonts/MedievalSharp-Regular.ttf') format('truetype');
+}
