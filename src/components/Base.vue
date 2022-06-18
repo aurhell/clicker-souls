@@ -1,37 +1,31 @@
 <script setup lang="ts">
-  import { useLoop } from '@/composables/loop.composable'
-  import { useSoulsStore } from '@/stores/souls'
+import BaseButton from '@/components/Common/BaseButton.vue'
+import { useLoop } from '@/composables/loop.composable'
+import { useSoulsStore } from '@/stores/souls'
 
-  const souls = useSoulsStore()
-  useLoop()
+const soulsStore = useSoulsStore()
+
+
+useLoop()
 </script>
 
 <template>
   <div class="flex flex-col justify-center items-center font-medievalSharp">
-    <span class="text-6xl">Welcome to clicker souls</span> <br />
-    <div class="text-center">
-      <span>Current souls: {{ souls.souls }}</span
-      ><br />
-      <span>Souls per second: {{ souls.soulsPerSecond }}</span
-      ><br />
+    <span class="text-6xl flex flex-row items-center">
+      Welcome to clicker souls
+    </span>
+    <div class="mt-2 text-center flex flex-col">
+      <span>Current souls: {{ soulsStore.souls }}</span>
+      <span>Souls per second: {{ soulsStore.soulsPerSecond }}</span>
     </div>
-    <div class="mt-2">
-      <button
-        type="button"
-        class="px-6 py-2 rounded bg-slate-400 hover:bg-slate-500 text-slate-100"
-        @click="souls.addSouls(1)"
-      >
-        Walk
-      </button>
+    <div class="mt-2 w-full flex flex-row justify-around">
+      <BaseButton label="Walk" @click="soulsStore.addSouls(1)" />
 
-      <button
-        v-if="souls.canTrain"
-        type="button"
-        class="mx-2 px-6 py-2 rounded bg-green-600 hover:bg-green-700 text-slate-100"
-        @click="souls.addSoulsPerSecond(1)"
-      >
-        Train
-      </button>
+      <BaseButton
+        v-if="soulsStore.canTrain"
+        label="Train"
+        @click="soulsStore.addSoulsPerSecond(1)"
+      />
     </div>
   </div>
 </template>
