@@ -17,11 +17,17 @@ export const useSoulsStore = defineStore({
   },
   actions: {
     addSouls(nbSouls: number): void {
-      this.souls = this.souls + nbSouls
+      this.souls = Number(this.souls) + Number(nbSouls)
+    },
+    setSouls(nbSouls: number): void {
+      this.souls = nbSouls
     },
     addSoulsPerSecond(nbSouls: number): void {
-      this.souls = this.souls - 10
-      this.soulsPerSecond = this.soulsPerSecond + nbSouls
-    }
+      this.souls = Number(this.souls) - 10
+      this.soulsPerSecond = Number(this.soulsPerSecond) + Number(nbSouls)
+    },
+    setSoulsPerSecond(nbSouls: number): void {
+      this.soulsPerSecond = nbSouls
+    },
   },
 })
