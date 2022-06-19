@@ -9,7 +9,6 @@ const props = defineProps({
   color: {
     type: String,
     default: BUTTON_COLORS.PRIMARY,
-    validator: (value: string) => Object.keys(BUTTON_COLORS).includes(value),
   },
 })
 </script>
