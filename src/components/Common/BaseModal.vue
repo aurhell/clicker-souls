@@ -60,7 +60,7 @@ onClickOutside(targetBaseModal, () => {
 
         <slot name="modalFooter">
           <div class="items-center px-4 py-3">
-            <BaseButton label="close" @click="closeModal" />
+            <BaseButton :label="$t('common.close')" @click="closeModal" />
           </div>
         </slot>
       </div>
